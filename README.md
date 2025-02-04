@@ -12,9 +12,9 @@ If you still want to use the [Google Maps Directions API](https://developers.goo
 ## Installation
 
 ```sh
-yarn add react-native-maps-routes
+yarn add @pedi/react-native-maps-routes
 or
-npm install react-native-maps-routes
+npm install @pedi/react-native-maps-routes
 ```
 
 ## Basic Usage
