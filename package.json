@@ -38,7 +38,6 @@
     "lint:fix": "eslint --fix ./src",
     "format": "prettier --write ./src",
     "format:check": "prettier --check --cache ./src",
-    "prepare": "husky",
     "build": "tsc",
     "release": "semantic-release"
   },
@@ -48,10 +47,6 @@
     "react-native-maps": ">=1.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.7.1",
-    "@commitlint/config-conventional": "19.7.1",
-    "@semantic-release/changelog": "6.0.3",
-    "@semantic-release/git": "10.0.1",
     "@types/jest": "29.5.14",
     "@types/node": "20.17.16",
     "@types/react": "18.3.18",
@@ -60,12 +55,14 @@
     "eslint": "8.57.1",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-react": "7.37.4",
-    "husky": "9.1.7",
     "prettier": "3.4.2",
     "react": "18.3.1",
     "react-native-maps": "1.20.1",
     "semantic-release": "24.2.1",
     "typescript": "5.7.3"
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "dependencies": {
+    "@client.ts/core": "^1.0.4"
+  }
 }
