@@ -4,5 +4,9 @@ export type GooglePolylineRoute = {
   };
   distanceMeters: number;
   duration: number;
-  error?: string;
 };
+
+export type GoogleRoutesResponse = {
+    routes: GooglePolylineRoute[];
+    error?: string;
+}

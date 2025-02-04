@@ -1,13 +1,13 @@
 import {createClient, createRoute} from "@client.ts/core";
 import {LatLng} from "react-native-maps";
-import {GooglePolylineRoute} from "../types/GoogleApi";
+import {GoogleRoutesResponse} from "../types/GoogleApi";
 
 export const createGoogleMapsRoutesClient = (apiKey: string) => {
     return createClient("https://routes.googleapis.com", {
         directions: {
             prefix: "/directions",
             routes: {
-                compute: createRoute<GooglePolylineRoute>().dynamic((
+                compute: createRoute<GoogleRoutesResponse>().dynamic((
                     origin: LatLng,
                     destination: LatLng,
                     mode: "DRIVE" | "BICYCLE" | "TWO_WHEELER" | "WALK"
