@@ -3,7 +3,7 @@ export type GooglePolylineRoute = {
     encodedPolyline: string;
   };
   distanceMeters: number;
-  duration: number;
+  duration: string;
 };
 
 export type GoogleRoutesResponse = {
