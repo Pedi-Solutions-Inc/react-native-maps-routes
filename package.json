@@ -1,6 +1,6 @@
 {
   "name": "@pedi/react-native-maps-routes",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Route component for react-native-maps",
   "author": {
     "name": "Hugo EXTRAT",
