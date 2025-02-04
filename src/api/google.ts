@@ -10,23 +10,50 @@ export const googleMapsClient = createClient("https://routes.googleapis.com", {
                 apiKey: string,
                 origin: LatLng,
                 destination: LatLng,
-                mode: "DRIVE" | "BICYCLE" | "TWO_WHEELER" | "WALK"
+                mode: "DRIVE" | "BICYCLE" | "TWO_WHEELER" | "WALK",
+                routingPreference?: "TRAFFIC_AWARE" | "TRAFFIC_UNAWARE" | "TRAFFIC_AWARE_OPTIMAL",
+                polylineQuality?: "HIGH_QUALITY" | "OVERVIEW",
+                units?: "METRIC" | "IMPERIAL",
+                languageCode?: string,
+                requestedReferenceRoutes?: ("FUEL_EFFICIENT" | "SHORTER_DISTANCE")[]
             ) => {
+                const body: any = {
+                    origin: {
+                        location: {
+                            latLng: {
+                                latitude: origin.latitude,
+                                longitude: origin.longitude
+                            },
+                        },
+                    },
+                    destination: {
+                        location: {
+                            latLng: {
+                                latitude: destination.latitude,
+                                longitude: destination.longitude,
+                            },
+                        },
+                    },
+                    travelMode: mode || "WALK",
+                }
+                if (languageCode) {
+                    body.languageCode = languageCode
+                }
+                if (units) {
+                    body.units = units
+                }
+                if (polylineQuality){
+                    body.polylineQuality = polylineQuality
+                }
+                if (routingPreference) {
+                    body.routingPreference = routingPreference
+                }
+                if (requestedReferenceRoutes) {
+                    body.requestedReferenceRoutes = requestedReferenceRoutes
+                }
                 return {
                     route: "POST /v2:computeRoutes",
-                    body: {
-                        origin: {
-                            location: {
-                                latLng: origin,
-                            },
-                        },
-                        destination: {
-                            location: {
-                                latLng: destination,
-                            },
-                        },
-                        travelMode: mode || "WALK",
-                    },
+                    body,
                     headers: {
                         "Content-Type": "application/json",
                         "X-Goog-Api-Key": apiKey,
